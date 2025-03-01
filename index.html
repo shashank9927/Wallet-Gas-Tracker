@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Example</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="container">
+    <div class="center">
+        <div class="input-container">
+            <input type="text" id="walletAddress" placeholder="Enter Wallet Address">
+            <button class="button" onclick="redirectToHome()">Calculate</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToHome() {
+            const walletAddress = document.getElementById("walletAddress").value.trim();
+            if (!walletAddress) {
+                alert("Please enter a valid wallet address.");
+                return;
+            }
+            window.open(`home.html?wallet=${walletAddress}`, "_blank"); 
+        }
+    </script>
+</body>
+</html>
